@@ -1,0 +1,39 @@
+.footer {
+  background: linear-gradient(135deg, #1c1f26 0%, #111318 100%);
+  color: #e0e0e0;
+  letter-spacing: 0.3px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer h3,
+.footer h6 {
+  color: #ffffff;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+  color: #cfcfcf;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footer-links li:hover {
+  color: #ff4757;
+  transform: translateX(5px);
+}
+
+.footer-social a {
+  color: #ffffff;
+  margin-left: 12px;
+  font-size: 20px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ff4757;
+  transform: scale(1.2);
+}
+
+.footer hr {
+  opacity: 0.3;
+}

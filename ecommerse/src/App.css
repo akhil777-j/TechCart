@@ -1,0 +1,4 @@
+/* Smooth scrolling for hash navigation */
+html {
+  scroll-behavior: smooth;
+}

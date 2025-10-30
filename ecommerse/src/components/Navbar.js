@@ -146,7 +146,7 @@ function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-custom sticky-top">
         <div className="container">
           <Link className="navbar-brand logo" to="/">
-            <i className="fas fa-shopping-bag me-2"></i>TECHCART
+            <i className="fas fa-shopping-bag me-2"></i>Techcart
           </Link>
 
           <button

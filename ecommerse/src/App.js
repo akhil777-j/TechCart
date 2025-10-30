@@ -18,6 +18,7 @@ import { CartProvider } from "./context/CartContext"; // ✅ Import context
 import Image1 from "./assets/Hero/headphone.png";
 import ServicesComponent from "./components/ServicesComponent";
 import DealsComponent from "./components/DealsComponent";
+import BestSellers from "./components/BestSellers";
 
 const BannerData = {
   discount: "30% OFF of the sale",
@@ -44,6 +45,7 @@ function App() {
                 <Services />
                 <Banner data={BannerData} />
                 <OurProducts />
+                <BestSellers/>
                 <Footer />
               </>
             }

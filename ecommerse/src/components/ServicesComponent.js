@@ -7,12 +7,15 @@ import {
   FaTags,
   FaGift,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // ✅ added this line
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const backgroundImageUrl =
   "https://images.unsplash.com/photo-1581090464674-81d58e9d1df3?auto=format&fit=crop&w=1920&q=80"; // clean tech bg
 
 const ServicesComponent = () => {
+  const navigate = useNavigate(); // ✅ added this line
+
   const services = [
     {
       icon: <FaShippingFast size={45} color="#0d6efd" />,
@@ -73,7 +76,10 @@ const ServicesComponent = () => {
         {/* Service Cards */}
         <div className="row g-4 justify-content-center">
           {services.map(({ icon, title, text }, index) => (
-            <div key={index} className="col-md-6 col-lg-4 d-flex justify-content-center">
+            <div
+              key={index}
+              className="col-md-6 col-lg-4 d-flex justify-content-center"
+            >
               <div
                 className="card text-center text-white bg-dark border-0 shadow-lg"
                 style={{
@@ -85,11 +91,13 @@ const ServicesComponent = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-10px)";
-                  e.currentTarget.style.boxShadow = "0 10px 25px rgba(13,110,253,0.6)";
+                  e.currentTarget.style.boxShadow =
+                    "0 10px 25px rgba(13,110,253,0.6)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 5px 10px rgba(0,0,0,0.3)";
+                  e.currentTarget.style.boxShadow =
+                    "0 5px 10px rgba(0,0,0,0.3)";
                 }}
               >
                 <div className="card-body">
@@ -115,7 +123,12 @@ const ServicesComponent = () => {
             designed to make your online shopping smoother, faster, and more
             enjoyable.
           </p>
-          <button className="btn btn-primary px-4 mt-3">Shop Now</button>
+          <button
+            className="btn btn-primary px-4 mt-3"
+            onClick={() => navigate("/")} // ✅ navigates to home page
+          >
+            Shop Now
+          </button>
         </div>
       </div>
     </div>

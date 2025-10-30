@@ -1,11 +1,14 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaPercent, FaShoppingBag, FaGift } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // ✅ Added navigation
 
 const backgroundImageUrl =
   "https://images.unsplash.com/photo-1607083206968-13611e3d76de?auto=format&fit=crop&w=1920&q=80"; // stylish shopping bg
 
 const DealsComponent = () => {
+  const navigate = useNavigate(); // ✅ Initialize navigate
+
   const deals = [
     {
       icon: <FaPercent size={45} color="#dc3545" />,
@@ -49,7 +52,7 @@ const DealsComponent = () => {
         </h1>
         <p className="lead text-light mx-auto" style={{ maxWidth: "800px" }}>
           Save big on your favorite gadgets! Exclusive limited-time deals only
-          on <strong>E-Shop</strong>.
+          on <strong>TechCart</strong>.
         </p>
       </div>
 
@@ -107,7 +110,12 @@ const DealsComponent = () => {
           Don’t miss out on the best prices of the year. Upgrade your tech
           today with unbeatable discounts.
         </p>
-        <button className="btn btn-danger px-4 mt-3">Shop Deals Now</button>
+        <button
+          className="btn btn-danger px-4 mt-3"
+          onClick={() => navigate("/")}
+        >
+          Shop Deals Now
+        </button>
       </div>
     </div>
   );

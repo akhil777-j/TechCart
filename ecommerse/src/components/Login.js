@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Login = () => {
+  // ✅ Disable scroll only while Login page is active
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      // Restore scroll when leaving Login page
+      document.body.style.overflow = originalOverflow;
+    };
+  }, []);
+
   return (
     <div
       className="d-flex justify-content-center align-items-center vh-100"
       style={{
-        background:
-          "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)", // elegant dark purple gradient
+        background: "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)",
         position: "relative",
         overflow: "hidden",
       }}
@@ -26,6 +36,7 @@ const Login = () => {
           zIndex: 0,
         }}
       ></div>
+
       <div
         style={{
           position: "absolute",

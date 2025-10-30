@@ -1,15 +1,58 @@
-
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../App.css";
 
 const Signup = () => {
+  // ✅ Disable scroll only when this component is mounted
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      // ✅ Restore original overflow when navigating away
+      document.body.style.overflow = originalOverflow;
+    };
+  }, []);
+
   return (
     <div
       className="d-flex justify-content-center align-items-center vh-100"
       style={{
         background: "linear-gradient(135deg, #ff4b2b, #ff416c)",
+        position: "relative",
+        overflow: "hidden", // keeps background contained
       }}
     >
+      {/* Floating background effects (optional, for design consistency) */}
+      <div
+        style={{
+          position: "absolute",
+          top: "-50px",
+          left: "-50px",
+          width: "200px",
+          height: "200px",
+          borderRadius: "50%",
+          background: "rgba(255, 255, 255, 0.2)",
+          filter: "blur(80px)",
+          zIndex: 0,
+        }}
+      ></div>
+
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-60px",
+          right: "-60px",
+          width: "250px",
+          height: "250px",
+          borderRadius: "50%",
+          background: "rgba(255, 255, 255, 0.15)",
+          filter: "blur(100px)",
+          zIndex: 0,
+        }}
+      ></div>
+
+      {/* Signup Card */}
       <div
         className="card shadow-lg border-0 p-4"
         style={{
@@ -17,6 +60,7 @@ const Signup = () => {
           borderRadius: "20px",
           background: "rgba(255, 255, 255, 0.95)",
           backdropFilter: "blur(10px)",
+          zIndex: 1,
         }}
       >
         <div className="text-center mb-4">
@@ -52,7 +96,10 @@ const Signup = () => {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="password" className="form-label fw-semibold text-dark">
+            <label
+              htmlFor="password"
+              className="form-label fw-semibold text-dark"
+            >
               Password
             </label>
             <input
@@ -65,7 +112,10 @@ const Signup = () => {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="confirmPassword" className="form-label fw-semibold text-dark">
+            <label
+              htmlFor="confirmPassword"
+              className="form-label fw-semibold text-dark"
+            >
               Confirm Password
             </label>
             <input
@@ -85,8 +135,12 @@ const Signup = () => {
               color: "#fff",
               transition: "all 0.3s ease",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#b02a37")}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#dc3545")}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = "#b02a37")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor = "#dc3545")
+            }
           >
             Sign Up
           </button>
@@ -95,7 +149,10 @@ const Signup = () => {
         <div className="text-center mt-4">
           <p className="small text-muted">
             Already have an account?{" "}
-            <a href="#" className="fw-semibold text-danger text-decoration-none">
+            <a
+              href="#"
+              className="fw-semibold text-danger text-decoration-none"
+            >
               Login
             </a>
           </p>
@@ -106,5 +163,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-

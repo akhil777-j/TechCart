@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ import navigation hook
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   // ✅ Disable scroll only when this component is mounted
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
@@ -14,6 +17,13 @@ const Signup = () => {
     };
   }, []);
 
+  // ✅ Handle form submission (redirect to Login page)
+  const handleSignup = (e) => {
+    e.preventDefault();
+    // You can add localStorage or API signup here if needed
+    navigate("/login"); // 🔁 Redirect to Login page
+  };
+
   return (
     <div
       className="d-flex justify-content-center align-items-center vh-100"
@@ -23,7 +33,7 @@ const Signup = () => {
         overflow: "hidden", // keeps background contained
       }}
     >
-      {/* Floating background effects (optional, for design consistency) */}
+      {/* Floating background effects */}
       <div
         style={{
           position: "absolute",
@@ -68,7 +78,7 @@ const Signup = () => {
           <p className="text-muted">Join us and start your journey</p>
         </div>
 
-        <form>
+        <form onSubmit={handleSignup}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label fw-semibold text-dark">
               Full Name
@@ -151,6 +161,7 @@ const Signup = () => {
             Already have an account?{" "}
             <a
               href="#"
+              onClick={() => navigate("/login")}
               className="fw-semibold text-danger text-decoration-none"
             >
               Login

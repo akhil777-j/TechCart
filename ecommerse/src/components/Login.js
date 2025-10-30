@@ -1,17 +1,25 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Login = () => {
-  // ✅ Disable scroll only while Login page is active
+  const navigate = useNavigate();
+
+  // Disable scrolling while login page is open
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-
     return () => {
-      // Restore scroll when leaving Login page
       document.body.style.overflow = originalOverflow;
     };
   }, []);
+
+  // Handle login form submission
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // ✅ You can add authentication logic later
+    navigate("/"); // Redirect to home page after login
+  };
 
   return (
     <div
@@ -67,7 +75,7 @@ const Login = () => {
           <p className="text-muted">Login to your account</p>
         </div>
 
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="mb-3">
             <label htmlFor="email" className="form-label fw-semibold">
               Email Address
@@ -113,9 +121,7 @@ const Login = () => {
           <button
             type="submit"
             className="btn btn-danger w-100 rounded-pill py-2 fw-semibold shadow-sm"
-            style={{
-              transition: "all 0.3s ease",
-            }}
+            style={{ transition: "all 0.3s ease" }}
             onMouseEnter={(e) =>
               (e.currentTarget.style.backgroundColor = "#c82333")
             }
@@ -130,7 +136,11 @@ const Login = () => {
         <div className="text-center mt-4">
           <p className="small text-muted">
             Don’t have an account?{" "}
-            <a href="#" className="text-danger fw-semibold text-decoration-none">
+            <a
+              href="#"
+              onClick={() => navigate("/signup")}
+              className="text-danger fw-semibold text-decoration-none"
+            >
               Sign Up
             </a>
           </p>

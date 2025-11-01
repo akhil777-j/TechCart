@@ -159,13 +159,14 @@ const Signup = () => {
         <div className="text-center mt-4">
           <p className="small text-muted">
             Already have an account?{" "}
-            <a
-              href="#"
+            <button
+              type="button"
               onClick={() => navigate("/login")}
-              className="fw-semibold text-danger text-decoration-none"
+              className="btn btn-link fw-semibold text-danger text-decoration-none p-0"
             >
               Login
-            </a>
+            </button>
+
           </p>
         </div>
       </div>

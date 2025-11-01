@@ -175,18 +175,23 @@ const Footer = () => {
           </p>
           <div className="footer-social">
             {socialIcons.map((s, i) => (
-              <a
+              <button
                 key={s.name}
-                href="#"
                 aria-label={s.name}
-                style={styles.socialIcon(hoveredIcon === i)}
+                style={{
+                  ...styles.socialIcon(hoveredIcon === i),
+                  background: "transparent",
+                  border: "none",
+                  padding: 0,
+                }}
                 onMouseEnter={() => setHoveredIcon(i)}
                 onMouseLeave={() => setHoveredIcon(null)}
               >
                 <i className={`bi ${s.icon}`}></i>
-              </a>
+              </button>
             ))}
           </div>
+
         </div>
       </div>
     </footer>

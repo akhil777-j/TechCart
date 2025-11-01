@@ -113,9 +113,14 @@ const Login = () => {
                 Remember me
               </label>
             </div>
-            <a href="#" className="text-danger small text-decoration-none">
+            <button
+              type="button"
+              className="btn btn-link text-danger small text-decoration-none p-0"
+              onClick={() => console.log("Forgot password clicked")}
+            >
               Forgot Password?
-            </a>
+            </button>
+
           </div>
 
           <button
@@ -136,13 +141,14 @@ const Login = () => {
         <div className="text-center mt-4">
           <p className="small text-muted">
             Don’t have an account?{" "}
-            <a
-              href="#"
+            <button
+              type="button"
+              className="btn btn-link text-danger fw-semibold text-decoration-none p-0"
               onClick={() => navigate("/signup")}
-              className="text-danger fw-semibold text-decoration-none"
             >
               Sign Up
-            </a>
+            </button>
+
           </p>
         </div>
       </div>

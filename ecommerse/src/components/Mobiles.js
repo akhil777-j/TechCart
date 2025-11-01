@@ -7,7 +7,7 @@ import Nothing from "../assets/Hero/nothingphone3a.webp";
 import oppo from "../assets/Hero/oppok13.webp";
 import poco from "../assets/Hero/pococ71.webp";
 import Realmep3 from "../assets/Hero/realmep3.webp";
-import Redmi from "../assets/Hero/Redmi.webp";
+import Redmi from "../assets/Hero/start.jpeg";
 import RedmiS5 from "../assets/Hero/redmiS5.webp";
 import Samsungs25 from "../assets/Hero/samsunggs25.webp";
 import Vivot4 from "../assets/Hero/vivot4.webp";
@@ -20,7 +20,7 @@ const mobiles = [
   { id: 5, name: "Xiaomi 14 Pro", price: 54999, image: oppo },
   { id: 6, name: "Realme GT 6", price: 42999, image: poco },
   { id: 7, name: "Realme P3 Pro", price: 39999, image: Realmep3 },
-  { id: 8, name: "Redmi Note 13 Pro", price: 29999, image: Redmi },
+  { id: 8, name: "iphone 15 Pro max", price: 29999, image: Redmi },
   { id: 9, name: "Redmi S5 Ultra", price: 27499, image: RedmiS5 },
   { id: 10, name: "Samsung Galaxy S25 Ultra", price: 139999, image: Samsungs25 },
   { id: 11, name: "Vivo T4 5G", price: 33999, image: Vivot4 },

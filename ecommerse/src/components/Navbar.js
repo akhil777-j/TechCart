@@ -22,7 +22,7 @@ const CategoryItems = [
 function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { cart, totalPrice, totalItems } = useContext(CartContext); // ✅ Use CartContext
+  const {totalPrice, totalItems } = useContext(CartContext); // ✅ Use CartContext
 
   const handleLogin = () => navigate("/login");
   const handleSignup = () => navigate("/signup");
